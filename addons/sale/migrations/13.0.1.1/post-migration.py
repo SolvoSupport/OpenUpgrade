@@ -103,7 +103,7 @@ def fill_confirmation_date(env):
         env.cr,
         """UPDATE sale_order
         SET date_order = confirmation_date
-        WHERE state IN ('sale', 'done')"""
+        WHERE state IN ('sale', 'done') and confirmation_date IS NOT NULL"""
     )
 
 
